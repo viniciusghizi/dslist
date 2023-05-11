@@ -1,6 +1,7 @@
 package com.dev.ghizi.dslist.dto;
 
 import com.dev.ghizi.dslist.entitites.Game;
+import com.dev.ghizi.dslist.projections.GameMinProjection;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,7 +11,7 @@ import lombok.NoArgsConstructor;
 public class GameMinDTO {
     private Long id;
     private String title;
-    private String year;
+    private Integer year;
     private String imgUrl;
     private String ShortDescription;
 
@@ -21,6 +22,14 @@ public class GameMinDTO {
         this.year = entity.getYear();
         this.imgUrl = entity.getImgUrl();
         this.ShortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        this.id = projection.getId();
+        this.title = projection.getTitle();
+        this.year = projection.getYear();
+        this.imgUrl = projection.getImgUrl();
+        this.ShortDescription = projection.getShortDescription();
     }
 
 }
