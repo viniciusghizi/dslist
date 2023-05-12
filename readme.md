@@ -1,33 +1,32 @@
 # DS List
 
+> Backend DS List, The project list all games, all games by type and your positions. You can edit the game position too. 
 
+### Features
 
-> Backend DS List, listando tipos de Games, games e suas posições. Também será possivel editar a posição de cada Game. 
+The project is finished. I want to active Elasticsearch for Logs searching. This app is hosted on Railway Cloud Service in this URL: https ://dslist-production-b6ca.up.railway.app
 
-### Ajustes e melhorias
-
-O projeto está finalizado. Falta adicionar Elasticsearch com os logs do projeto.
-
-Projeto foi executado seguindo o cronograma do Dev Superior na semana do intensivão
+This project has been executed with the Dev Superior na semana do intensivão schedule
 
 ![aula](./.images/aula1.jpeg)
 
 ## 💻 Pré-requisitos
 
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* You need to install `JAVA 17`.
+* You need to install  `Docker`.
 
-* Você instalou a versão mais recente de `JAVA 17`
-* Você tem uma máquina  com  `Docker`.
+## 🚀 Installing <DS List>
 
-## 🚀 Instalando <DS List>
+To install the <DS List>, follow this steps:
 
-Para instalar o <DS List>, siga estas etapas:
+docker compose up -d
 
-Basta subir o Docker-compose e rodar a aplicação
+and run the application
 
-## ☕ Usando <DS List>
+## ☕ Using <DS List>
 
-Após subir o backend você terá os seguintes endpoints:
+After start the backend, you can use this endpoints:
+Note: in Test profile, the project use H2 Database but in HOMOLOG or PRODUCTION you can use Postgre
 
 `GET http://localhost:8080/lists` - Return a list of game Category
 
@@ -37,11 +36,4 @@ Após subir o backend você terá os seguintes endpoints:
 
 `GET http://localhost:8080/games/{gameId}` - Return a specific game
 
-`POST http://localhost:8080/lists/{listId}/replacement`  -- data `{"sourceIndex": 4,"destinationIndex": 1}`
-
-
-## 📝 Licença
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+`POST http://localhost:8080/lists/{listId}/replacement`  -- data `{"sourceIndex": 4,"destinationIndex": 1}` Update a game position on a list.
